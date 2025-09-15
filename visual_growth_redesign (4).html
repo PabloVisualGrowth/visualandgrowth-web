@@ -1,8 +1,10 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visual&Growth - Automatización Comercial e IA Empresarial</title>
+    <meta name="description" content="Automatización empresarial e IA para escalar tu negocio. Eliminamos fricciones, optimizamos procesos y aceleramos el crecimiento sostenible.">
     <style>
         * {
             margin: 0;
@@ -157,6 +159,25 @@
             }
         }
 
+        @keyframes floatParticle {
+            0% { 
+                transform: translateY(100vh) translateX(0px) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+                transform: translateY(90vh) translateX(20px) scale(1);
+            }
+            90% {
+                opacity: 1;
+                transform: translateY(10vh) translateX(-20px) scale(1);
+            }
+            100% { 
+                transform: translateY(-10vh) translateX(0px) scale(0);
+                opacity: 0;
+            }
+        }
+
         /* Header */
         .header {
             position: fixed;
@@ -299,21 +320,6 @@
 
         .nav-links a:last-child {
             border-radius: 0 0 12px 12px;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--accent-blue);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
         }
 
         /* Back to Top Button */
@@ -882,6 +888,13 @@
                 font-size: 16px;
                 padding: 12px 20px;
             }
+
+            .logo-icon {
+                width: 90px;
+                height: 90px;
+                font-size: 32px;
+                filter: drop-shadow(0 0 20px rgba(0, 122, 255, 0.6)) drop-shadow(0 0 40px rgba(0, 122, 255, 0.3));
+            }
             
             .hero {
                 padding: 180px 20px 80px;
@@ -1388,30 +1401,6 @@
             }
         }
 
-        // Add floating particle animation
-        const particleStyle = document.createElement('style');
-        particleStyle.textContent = `
-            @keyframes floatParticle {
-                0% { 
-                    transform: translateY(100vh) translateX(0px) scale(0);
-                    opacity: 0;
-                }
-                10% {
-                    opacity: 1;
-                    transform: translateY(90vh) translateX(20px) scale(1);
-                }
-                90% {
-                    opacity: 1;
-                    transform: translateY(10vh) translateX(-20px) scale(1);
-                }
-                100% { 
-                    transform: translateY(-10vh) translateX(0px) scale(0);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(particleStyle);
-
         // Smooth scroll animation observer
         const observerOptions = {
             threshold: 0.1,
@@ -1467,6 +1456,8 @@
         // Form enhancement
         function enhanceForm() {
             const form = document.querySelector('form');
+            if (!form) return;
+            
             const inputs = form.querySelectorAll('input, select, textarea');
             
             inputs.forEach(input => {
@@ -1596,27 +1587,6 @@
             window.addEventListener('scroll', requestTick, { passive: true });
         }
 
-        // Initialize everything
-        document.addEventListener('DOMContentLoaded', function() {
-            // Observe all animated elements
-            const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
-            animatedElements.forEach(el => observer.observe(el));
-            
-            // Initialize features
-            createAdvancedParticles();
-            initSmoothScrolling();
-            enhanceForm();
-            initParallax();
-            closeMenuOnLinkClick();
-            closeMenuOnClickOutside();
-            
-            // Event listeners
-            window.addEventListener('scroll', handleScroll, { passive: true });
-            
-            // Initial calls
-            handleScroll();
-        });
-
         // Mobile menu toggle
         function toggleMenu() {
             const navLinks = document.querySelector('.nav-links');
@@ -1661,6 +1631,27 @@
                 }
             });
         }
+
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', function() {
+            // Observe all animated elements
+            const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+            animatedElements.forEach(el => observer.observe(el));
+            
+            // Initialize features
+            createAdvancedParticles();
+            initSmoothScrolling();
+            enhanceForm();
+            initParallax();
+            closeMenuOnLinkClick();
+            closeMenuOnClickOutside();
+            
+            // Event listeners
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            
+            // Initial calls
+            handleScroll();
+        });
 
         // Performance optimization: Reduce animations on mobile
         if (window.innerWidth <= 768) {
