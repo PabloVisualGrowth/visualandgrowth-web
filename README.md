@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -823,7 +822,7 @@
     <header class="header">
         <nav class="nav-container">
             <div class="logo">
-                <div class="logo-icon">VG</div>
+                <img src="logo.png" alt="Visual&Growth Logo" style="width: 60px; height: 60px; border-radius: 12px; object-fit: contain;">
                 <span class="logo-text">Visual&Growth</span>
             </div>
             <ul class="nav-links">
@@ -946,7 +945,7 @@
             <div class="about-content">
                 <div class="about-image">
                     <div class="about-photo">
-                        <div class="about-photo-placeholder">Foto<br>Pablo</div>
+                        <img src="pablo-foto.jpg" alt="Pablo Pérez CEO" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover;">
                     </div>
                     <div class="about-role">CEO & Founder</div>
                 </div>
