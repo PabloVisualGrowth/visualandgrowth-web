@@ -822,7 +822,7 @@
     <header class="header">
         <nav class="nav-container">
             <div class="logo">
-                <img src="logo.png" alt="Visual&Growth Logo" style="width: 60px; height: 60px; border-radius: 12px; object-fit: contain;">
+                <img src="logo.jpg" alt="Visual&Growth Logo" style="width: 60px; height: 60px; border-radius: 12px; object-fit: contain;">
                 <span class="logo-text">Visual&Growth</span>
             </div>
             <ul class="nav-links">
