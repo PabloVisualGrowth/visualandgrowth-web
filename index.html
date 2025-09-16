@@ -1519,6 +1519,11 @@
                     Llamar Ahora
                 </a>
             </div>
+            <div style="margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+            <p style="font-size: 14px; color: #a1a1a6; margin: 0;">
+                Copyright © 2025 Visual&Growth, All rights reserved
+            </p>
+        </div>
         </div>
     </footer>
 
