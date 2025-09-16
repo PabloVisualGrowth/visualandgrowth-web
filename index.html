@@ -1127,7 +1127,7 @@
             </p>
             <div class="cta-buttons">
                 <a href="#contacto" class="btn btn-primary">Consultoría Gratuita</a>
-                <a href="https://calendar.app.google/LLJpQ6d2S3EACofK9" target="_blank" class="btn btn-secondary">Agendar Reunión</a>
+                <a href="https://calendar.app.google/JefBW2JRGWa85rFf9" target="_blank" class="btn btn-secondary">Agendar Reunión</a>
             </div>
         </div>
     </section>
@@ -1358,7 +1358,7 @@
                 
                 <div class="form-buttons">
                     <button type="submit" class="btn btn-primary">Enviar Consulta</button>
-                    <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2FER9yZbk8f_5B2O3fJ2O_ZBzEEK3_HcEiCpE" target="_blank" class="btn btn-secondary">Agendar Reunión Directa</a>
+                    <a href="https://calendar.app.google/JefBW2JRGWa85rFf9" target="_blank" class="btn btn-secondary">Agendar Reunión</a>
                 </div>
             </form>
         </div>
