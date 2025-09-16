@@ -715,7 +715,7 @@
         /* Footer */
         .footer {
             text-align: center;
-            padding: 80px 24px;
+            padding: 80px 24px 0;
             border-top: 1px solid var(--border-subtle);
             margin-top: 120px;
         }
@@ -723,6 +723,35 @@
         .footer-content {
             max-width: 800px;
             margin: 0 auto;
+            padding-bottom: 60px;
+        }
+
+        /* Legal Notice */
+        .legal-notice {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px 24px;
+            background: rgba(0, 0, 0, 0.3);
+            margin-top: 40px;
+        }
+
+        .legal-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .legal-content p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+
+        /* Mobile responsiveness for legal */
+        @media (max-width: 768px) {
+            .legal-content p {
+                font-size: 13px;
+            }
         }
 
         .footer h3 {
@@ -747,47 +776,6 @@
             justify-content: center;
             gap: 40px;
             flex-wrap: wrap;
-        }
-
-        /* Legal Notice */
-        .legal-notice {
-            background: var(--secondary-black);
-            border-top: 1px solid var(--border-subtle);
-            padding: 40px 24px;
-            text-align: center;
-        }
-
-        .legal-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .legal-content p {
-            color: var(--text-secondary);
-            font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 12px;
-        }
-
-        .legal-content p:last-child {
-            margin-bottom: 0;
-        }
-
-        .legal-content a {
-            color: var(--accent-blue);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .legal-content a:hover {
-            color: var(--accent-purple);
-            text-shadow: 0 0 10px rgba(88, 86, 214, 0.4);
-        }
-
-        .legal-disclaimer {
-            opacity: 0.7;
-            font-size: 12px !important;
-            margin-top: 16px !important;
         }
 
         /* Text hover effects */
@@ -1286,14 +1274,14 @@
                 </a>
             </div>
         </div>
-    </footer>
-
-    <!-- Legal Notice -->
-    <div class="legal-notice">
-        <div class="legal-content">
-            <p>&copy; 2025 Visual&Growth. Todos los derechos reservados.</p>
+        
+        <!-- Legal Notice -->
+        <div class="legal-notice">
+            <div class="legal-content">
+                <p>&copy; 2025 Visual&Growth. Todos los derechos reservados.</p>
+            </div>
         </div>
-    </div>
+    </footer>
 
     <script>
         // Enhanced floating particles with 3D movement
