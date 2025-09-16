@@ -1630,46 +1630,82 @@
         }
 
         // Form enhancement
-        function enhanceForm() {
-            const form = document.querySelector('form');
-            if (!form) return;
-            
-            const inputs = form.querySelectorAll('input, select, textarea');
-            
-            inputs.forEach(input => {
-                input.addEventListener('focus', function() {
-                    this.parentElement.style.transform = 'translateY(-2px)';
-                });
+function enhanceForm() {
+    const form = document.querySelector('form');
+    if (!form) return;
+    
+    const inputs = form.querySelectorAll('input, select, textarea');
+    
+    inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.parentElement.style.transform = 'translateY(-2px)';
+            // Remove red border when user focuses on field
+            this.style.borderColor = 'var(--accent-blue)';
+            this.style.boxShadow = '0 0 0 3px rgba(0, 122, 255, 0.1)';
+        });
+        
+        input.addEventListener('blur', function() {
+            this.parentElement.style.transform = 'translateY(0)';
+            // Reset styles on blur
+            if (!this.classList.contains('error')) {
+                this.style.borderColor = 'var(--border-subtle)';
+                this.style.boxShadow = 'none';
+            }
+        });
+    });
+    
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent form submission first
+        
+        const requiredFields = form.querySelectorAll('[required]');
+        let isValid = true;
+        let firstInvalidField = null;
+        
+        // Reset all fields first
+        requiredFields.forEach(field => {
+            field.classList.remove('error');
+            field.style.borderColor = 'var(--border-subtle)';
+            field.style.boxShadow = 'none';
+        });
+        
+        // Check required fields
+        requiredFields.forEach(field => {
+            if (!field.value.trim()) {
+                field.classList.add('error');
+                field.style.borderColor = '#ff3b30';
+                field.style.boxShadow = '0 0 0 3px rgba(255, 59, 48, 0.2)';
+                field.style.backgroundColor = 'rgba(255, 59, 48, 0.05)';
+                isValid = false;
                 
-                input.addEventListener('blur', function() {
-                    this.parentElement.style.transform = 'translateY(0)';
-                });
-            });
-            
-            form.addEventListener('submit', function(e) {
-                const requiredFields = form.querySelectorAll('[required]');
-                let isValid = true;
-                
-                requiredFields.forEach(field => {
-                    if (!field.value.trim()) {
-                        field.style.borderColor = '#ff3b30';
-                        field.style.boxShadow = '0 0 0 3px rgba(255, 59, 48, 0.1)';
-                        isValid = false;
-                    } else {
-                        field.style.borderColor = 'var(--border-subtle)';
-                        field.style.boxShadow = 'none';
-                    }
-                });
-                
-                if (!isValid) {
-                    e.preventDefault();
-                    const firstInvalid = form.querySelector('[required]:invalid, [required][style*="rgb(255, 59, 48)"]');
-                    if (firstInvalid) {
-                        firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        firstInvalid.focus();
-                    }
-                    return false;
+                if (!firstInvalidField) {
+                    firstInvalidField = field;
                 }
+            } else {
+                field.classList.remove('error');
+                field.style.borderColor = 'var(--border-subtle)';
+                field.style.boxShadow = 'none';
+                field.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+            }
+        });
+        
+        if (!isValid) {
+            // Scroll to first invalid field
+            if (firstInvalidField) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const fieldPosition = firstInvalidField.getBoundingClientRect().top + window.pageYOffset;
+                
+                window.scrollTo({
+                    top: fieldPosition - headerHeight - 100,
+                    behavior: 'smooth'
+                });
+                
+                // Focus the field after scrolling
+                setTimeout(() => {
+                    firstInvalidField.focus();
+                }, 500);
+            }
+            return false;
+        }
                 
                 const submitBtn = form.querySelector('button[type="submit"]');
                 const originalText = submitBtn.textContent;
