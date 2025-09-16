@@ -1217,7 +1217,6 @@
             <div class="cookie-buttons">
                 <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Aceptar todo</button>
                 <button class="cookie-btn cookie-btn-decline" onclick="declineCookies()">Rechazar todo</button>
-                <button class="cookie-btn cookie-btn-settings" onclick="customizeCookies()">Personalizar</button>
             </div>
         </div>
     </div>
