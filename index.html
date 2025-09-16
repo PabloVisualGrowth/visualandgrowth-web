@@ -1096,7 +1096,7 @@
     <header class="header" id="header">
         <nav class="nav-container">
             <div class="logo">
-                <img src="logo.jpg" alt="Visual&Growth Logo" style="width: 60px; height: 60px; border-radius: 12px; object-fit: contain;">
+                <img src="logo.jpg" alt="Visual&Growth Logo" style="width: 100px; height: 100px; border-radius: 18px; object-fit: contain;">
             </div>
             <button class="menu-btn" onclick="toggleMenu()" aria-label="Menú">
                 ☰
