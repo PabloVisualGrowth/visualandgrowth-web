@@ -212,7 +212,7 @@
             text-decoration: none;
             padding: 8px 16px;
             border-radius: 8px;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 500;
             transition: all 0.2s;
         }
@@ -224,79 +224,37 @@
 
         .menu-btn {
             display: none;
-            background: transparent;
-            border: 1px solid var(--border);
+            background: none;
+            border: none;
             color: var(--text-primary);
             font-size: 24px;
             cursor: pointer;
-            padding: 8px 12px;
-            border-radius: 8px;
-            transition: all 0.2s;
+            padding: 8px;
         }
 
-        .menu-btn:hover {
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        /* Back to Top */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 48px;
-            height: 48px;
-            background: var(--primary);
-            border: none;
-            border-radius: 12px;
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-            z-index: 1000;
-            box-shadow: var(--shadow-md);
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* Hero Section */
+        /* Hero */
         .hero {
+            padding: 180px 40px 100px;
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 120px 40px 80px;
-            position: relative;
         }
 
         .hero-container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            width: 100%;
         }
 
         .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 16px;
+            display: inline-block;
+            padding: 8px 20px;
             background: rgba(0, 102, 255, 0.1);
             border: 1px solid rgba(0, 102, 255, 0.2);
-            border-radius: 100px;
-            font-size: 13px;
-            font-weight: 500;
+            border-radius: 24px;
             color: var(--primary-light);
-            margin-bottom: 32px;
-            margin-top: 40px;
-            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
             letter-spacing: 0.5px;
         }
 
@@ -313,8 +271,7 @@
 
         .hero-subtitle {
             font-size: clamp(20px, 3vw, 28px);
-            color: var(--primary-light);
-            font-weight: 600;
+            color: var(--text-secondary);
             margin-bottom: 20px;
             max-width: 700px;
         }
@@ -322,75 +279,62 @@
         .hero-description {
             font-size: 18px;
             color: var(--text-secondary);
-            line-height: 1.7;
             margin-bottom: 40px;
             max-width: 700px;
+            line-height: 1.7;
         }
 
         .cta-group {
             display: flex;
-            flex-wrap: wrap;
             gap: 16px;
-            margin-bottom: 32px;
+            flex-wrap: wrap;
         }
 
         .btn {
-            padding: 14px 32px;
-            border-radius: 10px;
-            font-size: 15px;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.2s;
-            border: none;
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            padding: 14px 32px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
         }
 
         .btn-primary {
             background: var(--primary);
             color: white;
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 4px 16px rgba(0, 102, 255, 0.3);
         }
 
         .btn-primary:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 8px 24px rgba(0, 102, 255, 0.4);
         }
 
         .btn-secondary {
-            background: transparent;
+            background: rgba(255, 255, 255, 0.05);
             color: var(--text-primary);
             border: 1px solid var(--border);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
-        .btn-accent {
-            background: rgba(16, 185, 129, 0.1);
-            color: var(--accent);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-        }
-
-        .btn-accent:hover {
-            background: rgba(16, 185, 129, 0.2);
-        }
-
-        /* Section Styles */
+        /* Sections */
         .section {
             padding: 100px 40px;
-            max-width: 1400px;
-            margin: 0 auto;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 80px;
         }
 
         .section-badge {
@@ -398,240 +342,263 @@
             padding: 6px 16px;
             background: rgba(0, 102, 255, 0.1);
             border: 1px solid rgba(0, 102, 255, 0.2);
-            border-radius: 100px;
-            font-size: 12px;
-            font-weight: 600;
+            border-radius: 20px;
             color: var(--primary-light);
+            font-size: 13px;
+            font-weight: 600;
             margin-bottom: 16px;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .section-title {
             font-size: clamp(32px, 5vw, 48px);
             font-weight: 800;
             margin-bottom: 16px;
-            line-height: 1.2;
         }
 
         .section-subtitle {
-            font-size: 18px;
+            font-size: 20px;
             color: var(--text-secondary);
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
         }
 
-        /* Services Grid */
+        /* Services */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
+            gap: 32px;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .service-card {
             background: var(--dark-card);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 32px;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            transform: scaleX(0);
-            transition: transform 0.3s;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .service-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(0, 102, 255, 0.3);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-glow);
         }
 
         .service-icon {
-            font-size: 40px;
-            margin-bottom: 20px;
+            font-size: 48px;
             display: block;
+            margin-bottom: 24px;
         }
 
         .service-card h3 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            line-height: 1.3;
+            font-size: 22px;
+            margin-bottom: 16px;
+            color: var(--text-primary);
         }
 
         .service-card p {
             color: var(--text-secondary);
-            font-size: 15px;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
-        /* Experience Grid */
+        /* Experience */
         .experience-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 24px;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
-        .experience-card {
+        .experience-item {
             background: var(--dark-card);
             border: 1px solid var(--border);
             border-radius: 16px;
             padding: 32px;
             text-align: center;
-            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .experience-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(0, 102, 255, 0.3);
-            box-shadow: var(--shadow-md);
+        .experience-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-glow);
         }
 
         .experience-number {
-            font-size: 48px;
+            font-size: 80px;
             font-weight: 800;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 16px;
+            margin-bottom: 0;
+            transition: all 0.4s;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
-        .experience-card h4 {
+        .experience-content {
+            opacity: 0;
+            transition: opacity 0.4s;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+        }
+
+        .experience-item:hover .experience-number {
+            opacity: 0;
+        }
+
+        .experience-item:hover .experience-content {
+            opacity: 1;
+        }
+
+        .experience-item h4 {
             font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            color: var(--primary-light);
         }
 
-        .experience-card p {
+        .experience-item p {
             color: var(--text-secondary);
-            font-size: 14px;
+            line-height: 1.6;
         }
 
-        /* About Section */
+        /* About */
         .about-container {
-            background: var(--dark-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 48px;
-            max-width: 1000px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .about-content {
             display: flex;
-            gap: 40px;
+            gap: 80px;
             align-items: flex-start;
+            margin-bottom: 80px;
         }
 
         .about-image-wrapper {
+            position: relative;
             flex-shrink: 0;
-            text-align: center;
         }
 
         .about-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
+            width: 280px;
+            height: 360px;
+            border-radius: 20px;
             object-fit: cover;
-            border: 3px solid var(--primary);
-            margin-bottom: 12px;
-            box-shadow: var(--shadow-glow);
+            border: 2px solid var(--border);
+            box-shadow: var(--shadow-lg);
         }
 
         .about-role {
-            font-size: 12px;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 8px 24px;
+            border-radius: 24px;
+            font-size: 14px;
             font-weight: 600;
-            color: var(--primary-light);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            box-shadow: var(--shadow-md);
+            white-space: nowrap;
+        }
+
+        .about-text {
+            flex: 1;
         }
 
         .about-text h3 {
-            font-size: 28px;
-            font-weight: 800;
-            margin-bottom: 20px;
+            font-size: 32px;
+            margin-bottom: 24px;
         }
 
         .about-text p {
             color: var(--text-secondary);
+            line-height: 1.8;
             margin-bottom: 20px;
-            line-height: 1.7;
+            font-size: 17px;
         }
 
         .about-highlight {
             background: rgba(0, 102, 255, 0.05);
             border-left: 3px solid var(--primary);
-            padding: 20px;
+            padding: 24px;
             border-radius: 8px;
             margin: 24px 0;
         }
 
         .about-highlight h4 {
             color: var(--primary-light);
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 8px;
+            font-size: 20px;
+            margin-bottom: 12px;
         }
 
         .about-highlight p {
-            margin: 0;
+            margin-bottom: 0;
         }
 
         .about-quote {
             font-style: italic;
-            color: var(--secondary);
-            font-weight: 500;
-            font-size: 17px;
+            color: var(--primary-light) !important;
+            font-size: 19px !important;
+            padding-left: 24px;
+            border-left: 3px solid var(--primary);
+            margin-top: 24px;
         }
 
-        /* Contact Section */
+        /* Contact */
         .contact-section {
-            background: var(--dark-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 60px 48px;
             max-width: 800px;
             margin: 0 auto;
+            background: var(--dark-card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 60px;
+            box-shadow: var(--shadow-lg);
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 28px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
-            font-size: 14px;
-            font-weight: 600;
+            margin-bottom: 10px;
             color: var(--text-primary);
+            font-weight: 500;
+            font-size: 15px;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 12px 16px;
+            padding: 14px 18px;
             background: var(--dark-elevated);
             border: 1px solid var(--border);
-            border-radius: 8px;
+            border-radius: 10px;
             color: var(--text-primary);
             font-size: 15px;
+            transition: all 0.3s;
             font-family: inherit;
-            transition: all 0.2s;
         }
 
         .form-group input:focus,
@@ -643,52 +610,80 @@
         }
 
         .form-group textarea {
-            min-height: 120px;
+            min-height: 140px;
             resize: vertical;
         }
 
         .form-buttons {
             display: flex;
             gap: 16px;
-            flex-wrap: wrap;
             margin-top: 32px;
         }
 
         /* Footer */
         .footer {
-            text-align: center;
-            padding: 60px 40px;
+            background: var(--dark-card);
             border-top: 1px solid var(--border);
-            margin-top: 100px;
+            padding: 60px 40px 40px;
+            text-align: center;
         }
 
         .footer h3 {
             font-size: 24px;
-            font-weight: 800;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
         .footer-tagline {
             color: var(--text-secondary);
-            font-size: 14px;
             margin-bottom: 24px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
         }
 
         .copyright {
-            margin-top: 32px;
+            margin-top: 40px;
             padding-top: 24px;
             border-top: 1px solid var(--border);
-            font-size: 13px;
+        }
+
+        .copyright p {
             color: var(--text-tertiary);
+            font-size: 14px;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-md);
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow);
         }
 
         /* Animations */
         .fade-in {
             opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .fade-in.visible {
@@ -696,7 +691,7 @@
             transform: translateY(0);
         }
 
-        /* Mobile Responsive */
+        /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
@@ -740,6 +735,11 @@
             .about-content {
                 flex-direction: column;
                 text-align: center;
+                gap: 40px;
+            }
+
+            .about-image-wrapper {
+                margin: 0 auto;
             }
 
             .services-grid,
@@ -808,7 +808,6 @@
             <div class="fade-in" style="max-width: 900px; margin: 0 auto;">
                 <div class="hero-badge">Automatización Empresarial</div>
                 <h1 style="margin-left: auto; margin-right: auto;">Resolvemos Problemas Reales para Empresas Reales</h1>
-                <p class="hero-subtitle" style="margin-left: auto; margin-right: auto;">Escalado de Negocio e Inteligencia Artificial Empresarial</p>
                 <p class="hero-description" style="margin-left: auto; margin-right: auto;">
                     Tu negocio tiene potencial, pero algo te frena. Procesos ineficientes, falta de visibilidad, oportunidades perdidas. 
                     Nosotros identificamos esos obstáculos y los eliminamos con tecnología y estrategia para escalar tu empresa de forma sostenible.
@@ -849,56 +848,64 @@
             </div>
             
             <div class="service-card fade-in">
-                <span class="service-icon">💰</span>
-                <h3>Pagas más impuestos de los necesarios</h3>
-                <p>Revisamos tu estructura fiscal y encontramos optimizaciones legales que pueden ahorrarte miles de euros al año.</p>
+                <span class="service-icon">🤖</span>
+                <h3>No aprovechas el potencial de la IA</h3>
+                <p>Implementamos agentes virtuales inteligentes que atienden clientes 24/7, cualifican leads y aumentan tus conversiones.</p>
             </div>
             
             <div class="service-card fade-in">
-                <span class="service-icon">📱</span>
-                <h3>No tienes estrategia de contenido digital</h3>
-                <p>Creamos y automatizamos tu presencia en redes sociales para mantener visibilidad constante sin saturar tu agenda.</p>
+                <span class="service-icon">💼</span>
+                <h3>Necesitas optimizar tu estructura fiscal</h3>
+                <p>Asesoramiento fiscal estratégico para que pagues menos impuestos de forma legal y maximices tu rentabilidad empresarial.</p>
             </div>
             
             <div class="service-card fade-in">
-                <span class="service-icon">🚀</span>
-                <h3>No sabes cómo escalar sin perder calidad</h3>
-                <p>Te ayudamos a diseñar sistemas escalables que te permitan crecer manteniendo la excelencia operativa.</p>
+                <span class="service-icon">✍️</span>
+                <h3>No tienes tiempo para crear contenido de calidad</h3>
+                <p>Generamos contenido relevante y optimizado para atraer clientes y posicionar tu marca como referente en tu sector.</p>
             </div>
         </div>
     </section>
 
     <!-- Experience -->
-    <section id="experiencia" class="section">
+    <section id="experiencia" class="section" style="background: var(--dark-elevated);">
         <div class="section-header fade-in">
             <div class="section-badge">Metodología</div>
-            <h2 class="section-title">Cómo lo Hacemos</h2>
-            <p class="section-subtitle">Nuestro enfoque para resolver tus problemas comerciales</p>
+            <h2 class="section-title">Cómo Trabajamos</h2>
+            <p class="section-subtitle">Un proceso probado para garantizar resultados tangibles</p>
         </div>
         
         <div class="experience-grid">
-            <div class="experience-card fade-in">
-                <div class="experience-number">01</div>
-                <h4>Auditoría Profunda</h4>
-                <p>Analizamos tu operación actual, identificamos cuellos de botella y oportunidades de mejora que están frenando tu crecimiento.</p>
+            <div class="experience-item fade-in">
+                <div class="experience-number">1</div>
+                <div class="experience-content">
+                    <h4>Diagnóstico Profundo</h4>
+                    <p>Analizamos tu negocio en detalle para identificar exactamente dónde están las fricciones que frenan tu crecimiento.</p>
+                </div>
             </div>
             
-            <div class="experience-card fade-in">
-                <div class="experience-number">02</div>
-                <h4>Solución Personalizada</h4>
-                <p>Diseñamos e implementamos sistemas automatizados específicos para tu sector y modelo de negocio, no soluciones genéricas.</p>
+            <div class="experience-item fade-in">
+                <div class="experience-number">2</div>
+                <div class="experience-content">
+                    <h4>Estrategia Personalizada</h4>
+                    <p>Diseñamos una hoja de ruta específica para tu empresa con soluciones tecnológicas adaptadas a tus objetivos y presupuesto.</p>
+                </div>
             </div>
             
-            <div class="experience-card fade-in">
-                <div class="experience-number">03</div>
-                <h4>Optimización Continua</h4>
-                <p>Monitorizamos resultados y ajustamos constantemente para asegurar que cada euro invertido genere retorno medible.</p>
+            <div class="experience-item fade-in">
+                <div class="experience-number">3</div>
+                <div class="experience-content">
+                    <h4>Implementación Ágil</h4>
+                    <p>Ejecutamos las soluciones de forma iterativa, priorizando lo que genera mayor impacto en el menor tiempo posible.</p>
+                </div>
             </div>
             
-            <div class="experience-card fade-in">
-                <div class="experience-number">04</div>
-                <h4>Escalado Inteligente</h4>
-                <p>Una vez que funciona, escalamos el sistema para multiplicar resultados sin aumentar proporcionalmente tus costes operativos.</p>
+            <div class="experience-item fade-in">
+                <div class="experience-number">4</div>
+                <div class="experience-content">
+                    <h4>Escalado Inteligente</h4>
+                    <p>Una vez que funciona, escalamos el sistema para multiplicar resultados sin aumentar proporcionalmente tus costes operativos.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -912,10 +919,11 @@
         </div>
         
         <div class="about-container fade-in">
+            <!-- Pablo Pérez -->
             <div class="about-content">
                 <div class="about-image-wrapper">
-                    <img src="pablofoto1.jpg" alt="Pablo Pérez CEO" class="about-photo">
-                    <div class="about-role">CEO & Founder</div>
+                    <img src="pablofoto1.jpg" alt="Pablo Pérez Co-CEO" class="about-photo">
+                    <div class="about-role">Co-CEO & Co-Founder</div>
                 </div>
                 <div class="about-text">
                     <h3>Pablo Pérez</h3>
@@ -933,6 +941,32 @@
                     </p>
                     <p class="about-quote">
                         "No se trata de implementar la última tecnología, sino de encontrar la tecnología correcta para resolver tu problema específico."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Ignacio Viñas -->
+            <div class="about-content">
+                <div class="about-image-wrapper">
+                    <img src="ignaciovinas.jpg" alt="Ignacio Viñas Co-CEO" class="about-photo">
+                    <div class="about-role">Co-CEO & Co-Founder</div>
+                </div>
+                <div class="about-text">
+                    <h3>Ignacio Viñas</h3>
+                    <p>
+                        Como fotógrafo y filmmaker especializado en estrategia de marca, mi enfoque va más allá de capturar imágenes: se trata de crear valor real para las empresas a través del poder de la narrativa visual.
+                    </p>
+                    <div class="about-highlight">
+                        <h4>Estrategia Visual para Marcas</h4>
+                        <p>
+                            Mi trabajo consiste en desarrollar estrategias creativas que potencien la identidad de marca y generen conexión emocional con la audiencia. Combino la estética visual con objetivos comerciales concretos para que cada contenido genere resultados medibles.
+                        </p>
+                    </div>
+                    <p>
+                        He aprendido que una marca fuerte no se construye solo con buenos productos, sino con una historia visual coherente que comunique valor en cada punto de contacto con el cliente. La imagen es la primera impresión, pero la estrategia detrás es lo que convierte esa impresión en crecimiento sostenible.
+                    </p>
+                    <p class="about-quote">
+                        "Aportar valor a las marcas a través de la imagen y una estrategia bien definida es lo que transforma la percepción en acción."
                     </p>
                 </div>
             </div>
@@ -968,20 +1002,17 @@
                 </div>
                 
                 <div class="form-group fade-in">
-                    <label for="telefono">Teléfono *</label>
-                    <input type="tel" id="telefono" name="telefono" required>
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono">
                 </div>
                 
                 <div class="form-group fade-in">
-                    <label for="sector">Sector de actividad</label>
+                    <label for="sector">Sector de tu empresa</label>
                     <select id="sector" name="sector">
                         <option value="">Selecciona tu sector</option>
                         <option value="tecnologia">Tecnología</option>
-                        <option value="energia">Energía</option>
-                        <option value="energia-renovables">Energías Renovables</option>
                         <option value="consultoria">Consultoría</option>
                         <option value="servicios">Servicios Profesionales</option>
-                        <option value="marketing">Marketing y Publicidad</option>
                         <option value="e-commerce">E-commerce</option>
                         <option value="manufacturing">Manufacturing</option>
                         <option value="retail">Retail</option>
