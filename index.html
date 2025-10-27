@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visual&Growth - Automatización Comercial e IA Empresarial</title>
     <meta name="description" content="Automatización empresarial e IA para escalar tu negocio. Eliminamos fricciones, optimizamos procesos y aceleramos el crecimiento sostenible.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -32,12 +35,13 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background: var(--dark);
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+            font-weight: 400;
         }
 
         /* Animated Background */
@@ -487,6 +491,20 @@
 
         .experience-item:hover .experience-content {
             opacity: 1;
+        }
+
+        .experience-item.active .experience-number {
+            opacity: 0;
+        }
+
+        .experience-item.active .experience-content {
+            opacity: 1;
+        }
+
+        .experience-item.active {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-glow);
         }
 
         .experience-item h4 {
@@ -1241,6 +1259,24 @@
             showCookieConsent();
             document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
             window.addEventListener('scroll', handleScroll, { passive: true });
+            
+            // Handle mobile touch for experience items
+            const experienceItems = document.querySelectorAll('.experience-item');
+            experienceItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    // Remove active class from all items
+                    experienceItems.forEach(i => i.classList.remove('active'));
+                    // Add active class to clicked item
+                    this.classList.add('active');
+                });
+            });
+            
+            // Close experience item when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.experience-item')) {
+                    experienceItems.forEach(i => i.classList.remove('active'));
+                }
+            });
         });
     </script>
 </body>
