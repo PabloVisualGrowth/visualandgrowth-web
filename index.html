@@ -177,16 +177,21 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
+            background: transparent;
+            backdrop-filter: none;
+            border-bottom: none;
             z-index: 1000;
             transition: all 0.3s;
+            transform: translateY(0);
         }
 
         .header.scrolled {
-            background: rgba(10, 10, 10, 0.95);
-            box-shadow: var(--shadow-md);
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .header.hidden {
+            transform: translateY(-100%);
         }
 
         .nav-container {
@@ -661,8 +666,8 @@
 
         /* Footer */
         .footer {
-            background: var(--dark-card);
-            border-top: 1px solid var(--border);
+            background: transparent;
+            border-top: none;
             padding: 60px 40px 40px;
             text-align: center;
         }
@@ -680,7 +685,7 @@
         .copyright {
             margin-top: 40px;
             padding-top: 24px;
-            border-top: 1px solid var(--border);
+            border-top: none;
         }
 
         .copyright p {
@@ -1165,18 +1170,29 @@
         }, observerOptions);
 
         // Header & Back to Top
+        let lastScrollTop = 0;
         function handleScroll() {
             const header = document.getElementById('header');
             const backToTop = document.getElementById('backToTop');
-            const scrolled = window.pageYOffset > 50;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             
-            if (scrolled) {
-                header.classList.add('scrolled');
+            // Show/hide back to top button
+            if (scrollTop > 50) {
                 backToTop.classList.add('visible');
             } else {
-                header.classList.remove('scrolled');
                 backToTop.classList.remove('visible');
             }
+            
+            // Hide header when scrolling down, show when scrolling up
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // Scrolling down
+                header.classList.add('hidden');
+            } else {
+                // Scrolling up
+                header.classList.remove('hidden');
+            }
+            
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         }
 
         function scrollToTop() {
