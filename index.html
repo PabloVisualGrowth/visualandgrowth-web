@@ -214,74 +214,39 @@
         }
 
         .nav-container {
-            width: 200px;    /* Aumentado aún más */
-            height: 80px;    /* Mantener proporción */
-            border-radius: 0;
-            object-fit: contain;
-            box-shadow: none;
-            transition: transform 0.3s;
-            margin-right: auto;
-        }
+    max-width: 100%; /* Ocupa todo el ancho */
+    margin: 0 auto;
+    padding: 20px 0; /* Sin padding horizontal, el logo ya tiene */
+    display: flex;
+    justify-content: center; /* Centra el logo */
+    align-items: center;
+    width: 100%;
+}
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el logo */
+    width: 100%; /* Ocupa todo el ancho */
+    padding: 0 40px; /* Padding en los lados */
+}
 
-        .logo-image {
-            width: 340px;
-            height: 120px;
-            border-radius: 0;
-            object-fit: contain;
-            box-shadow: none;
-            transition: transform 0.3s;
-        }
+.logo-image {
+    width: 250px;    /* Muy grande */
+    height: 100px;   /* Proporcional */
+    border-radius: 0;
+    object-fit: contain;
+    box-shadow: none;
+    transition: transform 0.3s;
+}
 
-        .logo-image:hover {
-            transform: scale(1.05);
-        }
+.logo-image:hover {
+    transform: scale(1.05);
+}
 
-        .logo-text {
-            font-size: 20px;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 8px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 15px;
-            font-weight: 500;
-            transition: all 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--text-primary);
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 24px;
-            cursor: pointer;
-            padding: 8px;
-        }
-
+.logo-text {
+    display: none; /* Mantén esto oculto */
+}
         /* Hero */
         .hero {
             padding: 180px 40px 100px;
@@ -846,14 +811,12 @@
 
     <!-- Header -->
     <header class="header" id="header">
-        <nav class="nav-container">
-            <div class="logo">
-                <img src="VG_new-removebg-preview.png" alt="Visual&Growth Logo" class="logo-image">
-                <span class="logo-text">Visual&Growth</span>
-            </div>
-           <div style="flex: 1;"></div>
-        </nav>
-    </header>
+    <nav class="nav-container">
+        <div class="logo">
+            <img src="VG_new-removebg-preview.png" alt="Visual&Growth Logo" class="logo-image">
+        </div>
+    </nav>
+</header>
 
     <!-- Back to Top -->
     <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
