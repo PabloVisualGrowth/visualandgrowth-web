@@ -222,39 +222,32 @@
 
         .nav-container {
             width: 100%;
-            margin: 0;
-            padding: 0;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px 40px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
         .logo {
-            display: block;
-            width: 100vw;
-            margin: 0;
-            padding: 0;
-            position: relative;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 800px;
         }
 
         .logo-image {
-            width: 100vw;
-            max-width: none;
+            width: 100%;
             height: auto;
-            min-height: 100px;
-            max-height: 150px;
+            min-height: 150px;
+            max-height: 200px;
             border-radius: 0;
             object-fit: contain;
-            object-position: center;
             box-shadow: none;
             transition: transform 0.3s;
             display: block;
-            margin: 0;
-            padding: 0;
         }
 
         .logo-image:hover {
@@ -744,24 +737,21 @@
                 display: none;
             }
 
+            .nav-container {
+                padding: 20px 24px;
+            }
+
             .logo {
-                width: 100vw;
-                left: 50%;
-                right: 50%;
-                margin-left: -50vw;
-                margin-right: -50vw;
+                max-width: 600px;
             }
 
             .logo-image {
-                width: 100vw;
-                max-width: none;
-                min-height: 70px;
-                max-height: 100px;
-                object-fit: contain;
+                min-height: 100px;
+                max-height: 140px;
             }
 
             .hero {
-                padding: 140px 24px 60px;
+                padding: 180px 24px 60px;
             }
             
             .section {
