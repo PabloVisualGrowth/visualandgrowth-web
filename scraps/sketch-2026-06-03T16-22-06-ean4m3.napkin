@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "created": "2026-06-03T16:22:06.915Z",
+  "modified": "2026-06-03T16:57:34.138Z",
+  "objects": [
+    {
+      "id": "uyr4hal74",
+      "type": "rect",
+      "x": 236,
+      "y": 125.20000076293945,
+      "width": 741,
+      "height": 418,
+      "data": {
+        "fill": null,
+        "stroke": "#8B2500",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "wp1i3mvpg",
+      "type": "rect",
+      "x": 249,
+      "y": 130.20000076293945,
+      "width": 720,
+      "height": 410,
+      "data": {
+        "fill": null,
+        "stroke": "#2D7DD2",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "js6pt61k5",
+      "type": "text",
+      "x": 795,
+      "y": 260.20000076293945,
+      "data": {
+        "content": "hero background video",
+        "fontSize": 16,
+        "color": "#2D7DD2",
+        "bold": false
+      },
+      "width": 122,
+      "height": 42
+    },
+    {
+      "id": "a4lvon5zh",
+      "type": "rect",
+      "x": 480,
+      "y": 260.20000076293945,
+      "width": 276,
+      "height": 145,
+      "data": {
+        "fill": null,
+        "stroke": "#C2622D",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "nticubinh",
+      "type": "text",
+      "x": 570,
+      "y": 336.20000076293945,
+      "data": {
+        "content": "logo",
+        "fontSize": 16,
+        "color": "#C2622D",
+        "bold": false
+      },
+      "width": 33,
+      "height": 21
+    }
+  ]
+}

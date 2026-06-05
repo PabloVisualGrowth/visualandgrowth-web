@@ -1,0 +1,90 @@
+/* ===========================================================
+   Visual & Growth — /ecosistema/<solución>
+   Scroll-choreographed, FUSED over the living sky (no opaque
+   panels). Reuses .sbeat / .q / h2 / .pts / .quote / .price /
+   .huge-num from ecosistema.css; just adds solution content bits.
+   =========================================================== */
+
+body{min-height:100vh;background:#1a0f0c}
+
+/* category chip (fused) */
+.sbeat .sol-cat{
+  display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--gold);border:1px solid rgba(255,196,10,.45);border-radius:100px;padding:7px 14px;margin-bottom:20px;
+  background:rgba(255,196,10,.06);text-shadow:0 2px 14px rgba(0,0,0,.5);
+}
+/* tagline / lead under a title */
+.sbeat .sol-tag{
+  margin-top:22px;font-family:var(--grotesk);font-weight:300;color:rgba(244,246,252,.9);
+  font-size:clamp(17px,1.7vw,23px);line-height:1.45;max-width:34ch;text-shadow:0 2px 22px rgba(0,0,0,.6);
+}
+.sbeat.al-right .sol-tag{margin-left:auto}
+
+/* generic fused lead paragraph */
+.sbeat .lead{
+  margin-top:22px;font-family:var(--grotesk);font-weight:300;color:rgba(244,246,252,.85);
+  font-size:clamp(15px,1.4vw,19px);line-height:1.55;max-width:46ch;text-shadow:0 2px 18px rgba(0,0,0,.6);
+}
+.sbeat.al-right .lead{margin-left:auto}
+
+/* problem list — fused, no boxes */
+.sbeat .probs{list-style:none;margin:30px 0 0;display:flex;flex-direction:column;gap:20px;max-width:50ch}
+.sbeat.al-right .probs{margin-left:auto}
+.sbeat .probs li{position:relative;padding-left:26px;text-shadow:0 2px 16px rgba(0,0,0,.6)}
+.sbeat.al-right .probs li{padding-left:0;padding-right:26px;text-align:right}
+.sbeat .probs li::before{content:"✕";position:absolute;left:0;top:1px;color:#ff6b6b;font-size:13px}
+.sbeat.al-right .probs li::before{left:auto;right:0}
+.sbeat .probs b{font-family:var(--grotesk);font-weight:500;font-size:clamp(16px,1.4vw,19px);color:var(--star);display:block;margin-bottom:5px}
+.sbeat .probs span{font-family:var(--grotesk);font-weight:300;font-size:clamp(13px,1.15vw,15px);color:var(--dim);line-height:1.5}
+
+/* approach quote (fused) */
+.sbeat .a-quote{border-left:2px solid var(--gold);padding-left:20px;margin-top:26px;max-width:34ch}
+.sbeat.al-right .a-quote{border-left:0;border-right:2px solid var(--gold);padding-left:0;padding-right:20px;margin-left:auto;text-align:right}
+.sbeat .a-quote p{font-family:var(--serif);font-style:italic;font-size:clamp(17px,1.6vw,22px);color:var(--star);line-height:1.35;text-shadow:0 2px 18px rgba(0,0,0,.6)}
+.sbeat .a-quote span{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);display:block;margin-top:9px}
+
+/* includes — fused two-column list */
+.sbeat .incs{list-style:none;margin:28px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:13px 36px;max-width:62ch}
+.sbeat .incs li{display:flex;gap:12px;align-items:flex-start;font-family:var(--grotesk);font-weight:300;
+  font-size:clamp(13px,1.15vw,16px);color:rgba(244,246,252,.85);line-height:1.45;text-shadow:0 2px 16px rgba(0,0,0,.6)}
+.sbeat .incs .n{font-family:var(--mono);font-size:10px;color:rgba(255,196,10,.7);flex:none;margin-top:2px}
+
+/* stats — fused */
+.sbeat .stats-row{display:flex;gap:clamp(30px,5vw,72px);margin-top:8px;flex-wrap:wrap}
+.sbeat.al-center .stats-row{justify-content:center}
+.sbeat .stat .v{font-family:var(--grotesk);font-weight:600;font-size:clamp(44px,6vw,80px);color:var(--gold);letter-spacing:-.03em;line-height:1;text-shadow:0 4px 30px rgba(0,0,0,.5)}
+.sbeat .stat .k{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-top:12px;max-width:18ch}
+
+/* back + next links + cta (gated to the live beat) */
+.sbeat .sol-back{display:inline-flex;align-items:center;gap:8px;margin-bottom:24px;pointer-events:none;
+  font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);
+  text-decoration:none;transition:color .3s;text-shadow:0 2px 16px rgba(0,0,0,.6)}
+.sbeat .sol-back:hover{color:var(--star)}
+.sbeat .sol-cta{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;pointer-events:none}
+.sbeat.al-right .sol-cta{justify-content:flex-end}
+.sbeat.al-center .sol-cta{justify-content:center}
+.sbeat .sol-next{display:inline-flex;align-items:center;gap:10px;margin-top:30px;pointer-events:none;
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);
+  text-decoration:none;text-shadow:0 2px 16px rgba(0,0,0,.6);transition:gap .3s}
+.sbeat .sol-next:hover{gap:16px}
+.sbeat.live .sol-back,.sbeat.live .sol-cta,.sbeat.live .sol-next{pointer-events:auto}
+
+/* compact type on the dedicated pages so each beat fits the viewport */
+.sol-stage .sbeat h2{font-size:clamp(26px,3.4vw,50px);line-height:1.02}
+.sol-stage #bh h2{font-size:clamp(34px,4.4vw,68px)}
+.sol-stage .sbeat .huge-num{font-size:clamp(90px,14vw,210px)}
+.sol-stage .sbeat .lead{font-size:clamp(13px,1.25vw,16px);max-width:44ch;margin-top:18px}
+.sol-stage .sbeat .sol-tag{font-size:clamp(15px,1.5vw,20px)}
+.sol-stage .sbeat .pts{margin-top:16px;gap:9px}
+.sol-stage .sbeat .pts li{font-size:clamp(12.5px,1.05vw,15px)}
+.sol-stage .sbeat .a-quote{margin-top:18px}
+.sol-stage .sbeat .a-quote p{font-size:clamp(15px,1.35vw,19px)}
+.sol-stage .sbeat .incs{margin-top:20px;gap:9px 30px}
+.sol-stage .sbeat .incs li{font-size:clamp(12px,1vw,14px)}
+.sol-stage .sbeat .probs{gap:15px;margin-top:22px}
+.sol-stage .sbeat .price{margin-top:14px}
+.sol-stage .sbeat .sol-cta{margin-top:26px}
+
+@media (max-width:760px){
+  .sbeat .incs{grid-template-columns:1fr}
+}

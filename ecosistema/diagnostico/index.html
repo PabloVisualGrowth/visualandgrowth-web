@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Visual &amp; Growth — Diagnóstico de crecimiento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css?v=14">
+<link rel="stylesheet" href="../../ecosistema.css?v=24">
+<link rel="stylesheet" href="../../solucion.css?v=20">
+</head>
+<body>
+
+  <!-- living sky -->
+  <div id="clouds"></div>
+  <div id="warm"></div>
+  <div id="sun"></div>
+  <div id="sky-tint"></div>
+  <div id="grain-e"></div>
+
+  <div class="frame"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span></div>
+
+  <header class="chrome show">
+    <a class="brand" href="../../Visual &amp; Growth — Del caos al sistema.html"><img src="../../assets/logo.png" alt="Visual &amp; Growth"></a>
+    <nav class="nav">
+      <a href="../../Ecosistema.html">Ecosistema</a>
+      <a class="cta-mini" href="../../Ecosistema.html">← Volver</a>
+    </nav>
+  </header>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.clouds.min.js"></script>
+  <script>
+    if(window.VANTA && window.THREE){
+      VANTA.CLOUDS({el:"#clouds",mouseControls:true,touchControls:true,gyroControls:false,
+        minHeight:200,minWidth:200,skyColor:0x844340,cloudShadowColor:0x502d18,sunColor:0xdaff18});
+    }
+    var sun=document.getElementById("sun"),warm=document.getElementById("warm");
+    if(sun){sun.style.left="60%";sun.style.top="28%";sun.style.opacity="0.7";}
+    if(warm){warm.style.background="radial-gradient(60% 55% at 60% 28%, rgba(255,196,90,.20), transparent 70%)";}
+  </script>
+  <script src="../../diagnostico.js?v=22"></script>
+  <script src="../../cookies.js"></script>
+
+</body>
+</html>
